@@ -1,5 +1,15 @@
 package utils
 
+import (
+	"math/rand"
+	"time"
+)
+
+var (
+	Author  = "seaung"
+	Version = "0.0.1"
+)
+
 var logo1 = `
  .----------------.  .----------------.  .-----------------. .----------------. 
 | .--------------. || .--------------. || .--------------. || .--------------. |
@@ -52,4 +62,11 @@ var logo3 = `
 
 `
 
-var banners = []string{logo1, logo2}
+var banners = []string{logo1, logo2, logo3}
+
+func ShowBanner() string {
+	s := rand.NewSource(time.Now().Unix())
+	r := rand.New(s)
+	index := r.Intn(len(banners))
+	return banners[index]
+}
