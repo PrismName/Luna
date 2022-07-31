@@ -1,11 +1,22 @@
 package plugins
 
-type Author struct {
-	AuthorName  string
-	VulnID      string
-	PublishDate string
-	VulnType    string
-	Description string
-	Reference   string
-	Range       string
+type PROTO string
+
+var (
+	HTTP PROTO = "HTTP"
+	RDP  PROTO = "RDP"
+)
+
+type PluginsInfos struct {
+	Name         string
+	Auhtor       string
+	VulnType     string
+	VulnID       string
+	VulnDate     string
+	VulnRefrence string
+	VulnDesc     string
 }
+
+func SetupPocs(v interface{}) {}
+
+func SetupExps(v interface{}) {}
